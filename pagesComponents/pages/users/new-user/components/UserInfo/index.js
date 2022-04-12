@@ -28,58 +28,60 @@ import FormField from "/pagesComponents/pages/users/new-user/components/FormFiel
 
 function UserInfo({ formData }) {
   const { formField, values, errors, touched } = formData;
-  const { firstName, lastName, company, email, password, repeatPassword } =
+  const { nome, apelido, dataNasc, email, telefone, celular, religiao, instagram } =
     formField;
   const {
-    firstName: firstNameV,
-    lastName: lastNameV,
-    company: companyV,
+    nome: nomeV,
+    apelido: apelidoV,
+    dataNasc: dataNascV,
     email: emailV,
-    password: passwordV,
-    repeatPassword: repeatPasswordV,
+    telefone: telefoneV,
+    celular: celularV,
+    religiao: religiaoV,
+    instagram: instagramV,
   } = values;
 
   return (
     <MDBox>
       <MDBox lineHeight={0}>
-        <MDTypography variant="h5">About me</MDTypography>
+        <MDTypography variant="h5">Dados Pessoais</MDTypography>
         <MDTypography variant="button" color="text">
-          Mandatory informations
+          Informações básicas
         </MDTypography>
       </MDBox>
       <MDBox mt={1.625}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={firstName.type}
-              label={firstName.label}
-              name={firstName.name}
-              value={firstNameV}
-              placeholder={firstName.placeholder}
-              error={errors.firstName && touched.firstName}
-              success={firstNameV.length > 0 && !errors.firstName}
+              type={nome.type}
+              label={nome.label}
+              name={nome.name}
+              value={nomeV}
+              placeholder={nome.placeholder}
+              error={errors.nome && touched.nome}
+              success={nomeV.length > 0 && !errors.nome}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={lastName.type}
-              label={lastName.label}
-              name={lastName.name}
-              value={lastNameV}
-              placeholder={lastName.placeholder}
-              error={errors.lastName && touched.lastName}
-              success={lastNameV.length > 0 && !errors.lastName}
+              type={apelido.type}
+              label={apelido.label}
+              name={apelido.name}
+              value={apelidoV}
+              placeholder={apelido.placeholder}
             />
           </Grid>
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={company.type}
-              label={company.label}
-              name={company.name}
-              value={companyV}
-              placeholder={company.placeholder}
+              type={dataNasc.type}
+              label={dataNasc.label}
+              name={dataNasc.name}
+              value={dataNascV}
+              placeholder={dataNasc.placeholder}
+              error={errors.dataNasc && touched.dataNasc}
+              success={dataNascV.length > 0 && !errors.dataNasc}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -97,26 +99,44 @@ function UserInfo({ formData }) {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={password.type}
-              label={password.label}
-              name={password.name}
-              value={passwordV}
-              placeholder={password.placeholder}
-              error={errors.password && touched.password}
-              success={passwordV.length > 0 && !errors.password}
-              inputProps={{ autoComplete: "" }}
+              type={telefone.type}
+              label={telefone.label}
+              name={telefone.name}
+              value={telefoneV}
+              placeholder={telefone.placeholder}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={repeatPassword.type}
-              label={repeatPassword.label}
-              name={repeatPassword.name}
-              value={repeatPasswordV}
-              placeholder={repeatPassword.placeholder}
-              error={errors.repeatPassword && touched.repeatPassword}
-              success={repeatPasswordV.length > 0 && !errors.repeatPassword}
-              inputProps={{ autoComplete: "" }}
+              type={celular.type}
+              label={celular.label}
+              name={celular.name}
+              value={celularV}
+              placeholder={celular.placeholder}
+              error={errors.celular && touched.celular}
+              success={celularV.length > 0 && !errors.celular}
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={religiao.type}
+              label={religiao.label}
+              name={religiao.name}
+              value={religiaoV}
+              placeholder={religiao.placeholder}
+              error={errors.religiao && touched.religiao}
+              success={religiaoV.length > 0 && !errors.religiao}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={instagram.type}
+              label={instagram.label}
+              name={instagram.name}
+              value={instagramV}
+              placeholder={instagram.placeholder}
             />
           </Grid>
         </Grid>

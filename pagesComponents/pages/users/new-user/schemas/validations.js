@@ -18,40 +18,35 @@ import checkout from "/pagesComponents/pages/users/new-user/schemas/form";
 
 const {
   formField: {
-    firstName,
-    lastName,
-    email,
-    password,
-    repeatPassword,
-    address1,
-    city,
-    zip,
-    twitter,
+    nome,
+    dataNasc,
+    celular,
+    cep,
+    estado,
+    cidade,
+    bairro,
+    endereco,
+    numero,
+    inscricaoPorMim,
   },
 } = checkout;
 
 const validations = [
   Yup.object().shape({
-    [firstName.name]: Yup.string().required(firstName.errorMsg),
-    [lastName.name]: Yup.string().required(lastName.errorMsg),
-    [email.name]: Yup.string().required(email.errorMsg).email(email.invalidMsg),
-    [password.name]: Yup.string()
-      .required(password.errorMsg)
-      .min(6, password.invalidMsg),
-    [password.name]: Yup.string()
-      .required(password.errorMsg)
-      .min(6, password.invalidMsg),
-    [repeatPassword.name]: Yup.string()
-      .required(repeatPassword.errorMsg)
-      .oneOf([Yup.ref("password"), null], repeatPassword.invalidMsg),
+    [nome.name]: Yup.string().required(nome.errorMsg),
+    [dataNasc.name]: Yup.string().required(dataNasc.errorMsg),
+    [celular.name]: Yup.string().required(celular.errorMsg).min(10, celular.invalidMsg),
   }),
   Yup.object().shape({
-    [address1.name]: Yup.string().required(address1.errorMsg),
-    [city.name]: Yup.string().required(city.errorMsg),
-    [zip.name]: Yup.string().required(zip.errorMsg).min(6, zip.invalidMsg),
+    [cep.name]: Yup.string().required(cep.errorMsg).min(8, cep.invalidMsg),
+    [estado.name]: Yup.string().required(estado.errorMsg),
+    [cidade.name]: Yup.string().required(cidade.errorMsg),
+    [bairro.name]: Yup.string().required(bairro.errorMsg),
+    [endereco.name]: Yup.string().required(endereco.errorMsg),
+    [numero.name]: Yup.string().required(numero.errorMsg),
   }),
   Yup.object().shape({
-    [twitter.name]: Yup.string().required(twitter.errorMsg),
+    [inscricaoPorMim.name]: Yup.string().required(inscricaoPorMim.errorMsg),
   }),
 ];
 

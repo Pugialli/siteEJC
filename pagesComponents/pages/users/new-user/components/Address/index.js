@@ -30,73 +30,98 @@ import FormField from "/pagesComponents/pages/users/new-user/components/FormFiel
 
 function Address({ formData }) {
   const { formField, values, errors, touched } = formData;
-  const { address1, address2, city, zip } = formField;
+  const { cep, cidade, endereco, numero, complemento, bairro } = formField;
   const {
-    address1: address1V,
-    address2: address2V,
-    city: cityV,
-    zip: zipV,
+    cep: cepV,
+    cidade: cidadeV,
+    endereco: enderecoV,
+    numero: numeroV,
+    complemento: complementoV,
+    bairro: bairroV,
   } = values;
 
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Address
+        Endereço
       </MDTypography>
       <MDBox mt={1.625}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
+      <Grid container spacing={3}>
+      <Grid item xs={12} sm={6}>
             <FormField
-              type={address1.type}
-              label={address1.label}
-              name={address1.name}
-              value={address1V}
-              placeholder={address1.placeholder}
-              error={errors.address1 && touched.address1}
-              success={address1V.length > 0 && !errors.address1}
+              type={endereco.type}
+              label={endereco.label}
+              name={endereco.name}
+              value={enderecoV}
+              placeholder={endereco.placeholder}
+              error={errors.endereco && touched.endereco}
+              success={enderecoV.length > 0 && !errors.endereco}
+            />
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <FormField
+              type={numero.type}
+              label={numero.label}
+              name={numero.name}
+              value={numeroV}
+              placeholder={numero.placeholder}
+              error={errors.numero && touched.numero}
+              success={numeroV.length > 0 && !errors.numero}
+            />
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <FormField
+              type={complemento.type}
+              label={complemento.label}
+              name={complemento.name}
+              value={complementoV}
+              placeholder={complemento.placeholder}
+              success={complementoV.length > 0}
             />
           </Grid>
           <Grid item xs={12}>
             <MDBox mt={-1.625}>
               <FormField
-                type={address2.type}
-                label={address2.label}
-                name={address2.name}
-                value={address2V}
-                placeholder={address2.placeholder}
-              />
+                type={bairro.type}
+                label={bairro.label}
+                name={bairro.name}
+                value={bairroV}
+                placeholder={bairro.placeholder}
+                error={bairro.numero && touched.bairro}
+                success={bairroV.length > 0 && !bairro.numero}
+                />
             </MDBox>
           </Grid>
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={city.type}
-              label={city.label}
-              name={city.name}
-              value={cityV}
-              placeholder={city.placeholder}
-              error={errors.city && touched.city}
-              success={cityV.length > 0 && !errors.city}
+              type={cep.type}
+              label={cep.label}
+              name={cep.name}
+              value={cepV}
+              placeholder={cep.placeholder}
+              error={errors.cep && touched.cep}
+              success={cepV.length > 0 && !errors.cep}
             />
           </Grid>
           <Grid item xs={6} sm={3}>
             <Autocomplete
-              options={["State 1", "State 2", "State 3"]}
+              options={["RJ", "SP", "Outros"]}
               renderInput={(params) => (
-                <MDInput {...params} variant="standard" label="State" />
+                <MDInput {...params} variant="standard" label="Estado" />
               )}
             />
           </Grid>
           <Grid item xs={6} sm={3}>
             <FormField
-              type={zip.type}
-              label={zip.label}
-              name={zip.name}
-              value={zipV}
-              placeholder={zip.placeholder}
-              error={errors.zip && touched.zip}
-              success={zipV.length > 0 && !errors.zip}
+              type={cidade.type}
+              label={cidade.label}
+              name={cidade.name}
+              value={cidadeV}
+              placeholder={cidade.placeholder}
+              error={errors.cidade && touched.cidade}
+              success={cidadeV.length > 0 && !errors.cidade}
             />
           </Grid>
         </Grid>

@@ -26,49 +26,42 @@ import MDTypography from "/components/MDTypography";
 // NewUser page components
 import FormField from "/pagesComponents/pages/users/new-user/components/FormField";
 
-function Socials({ formData }) {
-  const { formField, values, errors, touched } = formData;
-  const { twitter, facebook, instagram } = formField;
+function OtherInfo({ formData }) {
+  const { formField, values } = formData;
+  const { bairroEncontro, inscricaoPorMim, tamanhoCamisa, restricoesAlimentares, observacoes } = formField;
   const {
-    twitter: twitterV,
-    facebook: facebookV,
-    instagram: instagramV,
+    bairroEncontro: bairroEncontroV,
+    inscricaoPorMim: inscricaoPorMimV,
+    tamanhoCamisa: tamanhoCamisaV,
+    restricoesAlimentares: restricoesAlimentaresV,
+    observacoes: observacoesV,
   } = values;
 
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Socials
+        Outros
       </MDTypography>
       <MDBox mt={1.625}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <FormField
-              type={twitter.type}
-              label={twitter.label}
-              name={twitter.name}
-              value={twitterV}
-              placeholder={twitter.placeholder}
-              error={errors.twitter && touched.twitter}
-              success={twitterV.length > 0 && !errors.twitter}
+              type={bairroEncontro.type}
+              label={bairroEncontro.label}
+              name={bairroEncontro.name}
+              value={bairroEncontroV}
+              placeholder={bairroEncontro.placeholder}
             />
           </Grid>
           <Grid item xs={12}>
             <FormField
-              type={facebook.type}
-              label={facebook.label}
-              name={facebook.name}
-              value={facebookV}
-              placeholder={facebook.placeholder}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormField
-              type={instagram.type}
-              label={instagram.label}
-              name={instagram.name}
-              value={instagramV}
-              placeholder={instagram.placeholder}
+              type={observacoes.type}
+              label={observacoes.label}
+              name={observacoes.name}
+              value={observacoesV}
+              placeholder={observacoes.placeholder}
+              multiline
+              rows={5}
             />
           </Grid>
         </Grid>
@@ -77,9 +70,9 @@ function Socials({ formData }) {
   );
 }
 
-// typechecking props for Socials
-Socials.propTypes = {
+// typechecking props for Profile
+OtherInfo.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
 };
 
-export default Socials;
+export default OtherInfo;

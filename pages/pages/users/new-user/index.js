@@ -31,14 +31,14 @@ import MDButton from "/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
 import Footer from "/examples/Footer";
 
 // NewUser page components
 import UserInfo from "/pagesComponents/pages/users/new-user/components/UserInfo";
 import Address from "/pagesComponents/pages/users/new-user/components/Address";
-import Socials from "/pagesComponents/pages/users/new-user/components/Socials";
-import Profile from "/pagesComponents/pages/users/new-user/components/Profile";
+import Filiation from "/pagesComponents/pages/users/new-user/components/Filiation";
+import Invite from "/pagesComponents/pages/users/new-user/components/Invite";
+import OtherInfo from "/pagesComponents/pages/users/new-user/components/OtherInfo";
 
 // NewUser layout schemas for form and form feilds
 import validations from "/pagesComponents/pages/users/new-user/schemas/validations";
@@ -46,7 +46,7 @@ import form from "/pagesComponents/pages/users/new-user/schemas/form";
 import initialValues from "/pagesComponents/pages/users/new-user/schemas/initialValues";
 
 function getSteps() {
-  return ["User Info", "Address", "Social", "Profile"];
+  return ["Dados Pessoais", "Endereço", "Filiação", "Indicação", "Outros"];
 }
 
 function getStepContent(stepIndex, formData) {
@@ -56,9 +56,11 @@ function getStepContent(stepIndex, formData) {
     case 1:
       return <Address formData={formData} />;
     case 2:
-      return <Socials formData={formData} />;
+      return <Filiation formData={formData} />;
     case 3:
-      return <Profile formData={formData} />;
+      return <Invite formData={formData} />;
+    case 4:
+      return <OtherInfo formData={formData} />;
     default:
       return null;
   }
@@ -101,7 +103,6 @@ function NewUser() {
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
       <MDBox py={3} mb={20} height="65vh">
         <Grid
           container
@@ -149,7 +150,7 @@ function NewUser() {
                               color="light"
                               onClick={handleBack}
                             >
-                              back
+                              Anterior
                             </MDButton>
                           )}
                           <MDButton
@@ -158,7 +159,7 @@ function NewUser() {
                             variant="gradient"
                             color="dark"
                           >
-                            {isLastStep ? "send" : "next"}
+                            {isLastStep ? "Enviar Cadastro" : "Próximo"}
                           </MDButton>
                         </MDBox>
                       </MDBox>

@@ -16,92 +16,173 @@ Coded by www.creative-tim.com
 const form = {
   formId: "new-user-form",
   formField: {
-    firstName: {
-      name: "firstName",
-      label: "First Name",
+    //UserInfo
+    nome: {
+      name: "nome",
+      label: "Nome",
       type: "text",
-      errorMsg: "First name is required.",
+      errorMsg: "Nome é obrigatório.",
     },
-    lastName: {
-      name: "lastName",
-      label: "Last Name",
+    apelido: {
+      name: "apelido",
+      label: "Apelido",
       type: "text",
-      errorMsg: "Last name is required.",
     },
-    company: {
-      name: "company",
-      label: "Company",
-      type: "text",
+    dataNasc: {
+      name: "dataNasc",
+      label: "Nascimento",
+      type: "date",
+      errorMsg: "Data de nascimento é obrigatório.",
+      invalidMsg: "Seu data de nascimento não é válida.",
     },
     email: {
       name: "email",
-      label: "Email Address",
+      label: "Email",
       type: "email",
-      errorMsg: "Email address is required.",
-      invalidMsg: "Your email address is invalid",
     },
-    password: {
-      name: "password",
-      label: "Password",
-      type: "password",
-      errorMsg: "Password is required.",
-      invalidMsg: "Your password should be more than 6 characters.",
-    },
-    repeatPassword: {
-      name: "repeatPassword",
-      label: "Repeat Password",
-      type: "password",
-      errorMsg: "Password is required.",
-      invalidMsg: "Your password doesn't match.",
-    },
-    address1: {
-      name: "address1",
-      label: "Address 1",
-      type: "text",
-      errorMsg: "Address is required.",
-    },
-    address2: {
-      name: "address2",
-      label: "Address 2",
+    telefone: {
+      name: "telefone",
+      label: "Telefone",
       type: "text",
     },
-    city: {
-      name: "city",
-      label: "City",
+    celular: {
+      name: "celular",
+      label: "Celular",
       type: "text",
-      errorMsg: "City is required.",
+      errorMsg: "Celular é obrigatório.",
+      invalidMsg: "Celular não é válido.",
     },
-    zip: {
-      name: "zip",
-      label: "Zip",
-      type: "number",
-      errorMsg: "Zip is required.",
-      invalidMsg: "Zipcode is not valie (e.g. 70000).",
-    },
-    twitter: {
-      name: "twitter",
-      label: "Twitter Handle",
-      type: "text",
-      errorMsg: "Twitter profile is required.",
-    },
-    facebook: {
-      name: "facebook",
-      label: "Facebook Account",
+    religiao: {
+      name: "religiao",
+      label: "Religião",
       type: "text",
     },
     instagram: {
       name: "instagram",
-      label: "Instagram Account",
+      label: "Instagram",
       type: "text",
     },
-    publicEmail: {
-      name: "publicEmail",
-      label: "Public Email",
+
+    //Adress
+    cep: {
+      name: "cep",
+      label: "CEP",
+      type: "number",
+      errorMsg: "CEP é obrigatório.",
+      invalidMsg: "CEP não é válido (ex. 20000000).",
+    },
+    estado: {
+      name: "estado",
+      label: "Estado",
+      type: "text",
+      errorMsg: "Estado é obrigatório.",
+    },
+    cidade: {
+      name: "cidade",
+      label: "Cidade",
+      type: "text",
+      errorMsg: "Cidade é obrigatório.",
+    },
+    endereco: {
+      name: "endereco",
+      label: "Endereço",
+      type: "text",
+      errorMsg: "Endereço é obrigatório.",
+    },
+    numero: {
+      name: "numero",
+      label: "Número",
+      type: "number",
+      errorMsg: "Número é obrigatório.",
+    },
+    complemento: {
+      name: "complemento",
+      label: "Complemento",
+      type: "text",
+    },
+    bairro: {
+      name: "bairro",
+      label: "Bairro",
+      type: "text",
+      errorMsg: "Bairro é obrigatório.",
+    },
+
+    //Filiação
+    moracom: {
+      name: "moracom",
+      label: "Mora Com",
+      type: "text",
+    },
+    paisseparados: {
+      name: "paisseparados",
+      label: "Pais Separados",
+      type: "text",
+    },
+    paiNome: {
+      name: "paiNome",
+      label: "Nome do Pai",
+      type: "text",
+    },
+    paiContato: {
+      name: "paiContato",
+      label: "Contato do Pai",
+      type: "text",
+    },
+    maeNome: {
+      name: "maeNome",
+      label: "Nome da Mãe",
+      type: "text",
+    },
+    maeContato: {
+      name: "maeContato",
+      label: "Contato da Mãe",
+      type: "text",
+    },
+    //Indicação
+    indicadoNome: {
+      name: "indicadoNome",
+      label: "Nome",
+      type: "text",
+    },
+    indicadoApelido: {
+      name: "indicadoApelido",
+      label: "Apelido",
+      type: "text",
+    },
+    indicadoContato: {
+      name: "indicadoContato",
+      label: "Contato",
+      type: "text",
+    },
+    indicadoEmail: {
+      name: "indicadoEmail",
+      label: "Email",
       type: "email",
     },
-    bio: {
-      name: "bio",
-      label: "Bio",
+    //Outros
+    bairroEncontro: {
+      name: "bairroEncontro",
+      label: "Bairro durante o Encontro",
+      type: "text",
+    },
+    inscricaoPorMim: {
+      name: "inscricaoPorMim",
+      label: "Inscrição Efetuada",
+      type: "text",
+    },
+    tamanhoCamisa: {
+      name: "tamanhoCamisa",
+      label: "Tamanho da Camisa",
+      type: "text",
+    },
+    restricoesAlimentares: {
+      name: "restricoesAlimentares",
+      label: "Restrições Alimentares",
+      type: "text",
+    },
+    observacoes: {
+      name: "observacoes",
+      label: "Observações",
     },
   },
 };

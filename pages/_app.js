@@ -39,7 +39,6 @@ import MDBox from "/components/MDBox";
 
 // NextJS Material Dashboard 2 PRO examples
 import Sidenav from "/examples/Sidenav";
-import Configurator from "/examples/Configurator";
 
 // NextJS Material Dashboard 2 PRO themes
 import theme from "/assets/theme";
@@ -60,7 +59,6 @@ import {
   MaterialUIControllerProvider,
   useMaterialUIController,
   setMiniSidenav,
-  setOpenConfigurator,
 } from "/context";
 
 // Images
@@ -78,7 +76,6 @@ function Main({ Component, pageProps }) {
     miniSidenav,
     direction,
     layout,
-    openConfigurator,
     sidenavColor,
     transparentSidenav,
     whiteSidenav,
@@ -114,9 +111,6 @@ function Main({ Component, pageProps }) {
     }
   };
 
-  // Change the openConfigurator state
-  const handleConfiguratorOpen = () =>
-    setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -148,7 +142,6 @@ function Main({ Component, pageProps }) {
       zIndex={99}
       color="dark"
       sx={{ cursor: "pointer" }}
-      onClick={handleConfiguratorOpen}
     >
       <Icon fontSize="small" color="inherit">
         settings
@@ -171,11 +164,9 @@ function Main({ Component, pageProps }) {
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-            <Configurator />
-            {configsButton}
           </>
         )}
-        {layout === "vr" && <Configurator />}
+        {layout === "vr"}
       </ThemeProvider>
     </CacheProvider>
   ) : (
@@ -192,11 +183,8 @@ function Main({ Component, pageProps }) {
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-          <Configurator />
-          {configsButton}
         </>
       )}
-      {layout === "vr" && <Configurator />}
     </ThemeProvider>
   );
 }
