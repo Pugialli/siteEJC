@@ -15,28 +15,36 @@ Coded by www.creative-tim.com
 
 // prop-type is a library for typechecking of props
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
+import Autocomplete from "@mui/material/Autocomplete";
+import Switch from "@mui/material/Switch";
+
 
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
+import MDInput from "/components/MDInput";
 
 // NewUser page components
 import FormField from "/pagesComponents/pages/users/new-user/components/FormField";
 
 function Filiation({ formData }) {
   const { formField, values, errors, touched } = formData;
-  const { moracom, paisseparados, paiNome, paiContato, maeNome, maeContato } = formField;
+  const { moraCom, paiNome, paiContato, maeNome, maeContato } = formField;
   const {
-    moracom: moracomV,
-    paisseparados: paisseparadosV,
+    moraCom: moraComV,
     paiNome: paiNomeV,
     paiContato: paiContatoV,
     maeNome: maeNomeV,
     maeContato: maeContatoV,
   } = values;
+
+  const [paisSeparados, setPaisSeparados] = useState(false);
+  const handleSetPaisSeparados = () => setPaisSeparados(!paisSeparados);
+
 
   return (
     <MDBox>
@@ -44,34 +52,88 @@ function Filiation({ formData }) {
         Filiação
       </MDTypography>
       <MDBox mt={1.625}>
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <FormField
-              type={moracom.type}
-              label={moracom.label}
-              name={moracom.name}
-              value={moracomV}
-              placeholder={moracom.placeholder}
-              error={errors.moracom && touched.moracom}
-              success={moracomV.length > 0 && !errors.moracom}
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <Autocomplete
+              options={["Pais", "Mãe", "Pai", "Parentes", "Amigos", "Sozinho", "Cônjuge"]}
+              renderInput={(params) => (
+                <MDInput {...params} variant="standard" label="Mora com" />
+              )}
             />
           </Grid>
-          <Grid item xs={12}>
-            <FormField
-              type={paisseparados.type}
-              label={paisseparados.label}
-              name={paisseparados.name}
-              value={paisseparadosV}
-              placeholder={paisseparados.placeholder}
-            />
+          
+          <Grid item xs={12} sm={6}>
+            <MDBox
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <MDTypography variant="subtitle2" color="text">
+                Pais separados
+              </MDTypography>
+              <MDBox
+                display="flex"
+                justifyContent="flex-end"
+                alignItems="center"
+              >
+                <MDBox lineHeight={0} mx={2}>
+                  <MDTypography variant="button" color="text">
+                    {paisSeparados ? "Sim" : "Não"}
+                  </MDTypography>
+                </MDBox>
+                <MDBox mr={1}>
+                  <Switch checked={paisSeparados} onChange={handleSetPaisSeparados} />
+                </MDBox>
+              </MDBox>
+            </MDBox>
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12} sm={6}>
+            <Autocomplete
+              options={["Sim", "Não"]}
+              renderInput={(params) => (
+                <MDInput {...params} variant="standard" label="Pais separados" />
+              )}
+            /> */}
+          {/* </Grid> */}
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
             <FormField
               type={paiNome.type}
               label={paiNome.label}
               name={paiNome.name}
               value={paiNomeV}
               placeholder={paiNome.placeholder}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={paiContato.type}
+              label={paiContato.label}
+              name={paiContato.name}
+              value={paiContatoV}
+              placeholder={paiContato.placeholder}
+            />
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={maeNome.type}
+              label={maeNome.label}
+              name={maeNome.name}
+              value={maeNomeV}
+              placeholder={maeNome.placeholder}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={maeContato.type}
+              label={maeContato.label}
+              name={maeContato.name}
+              value={maeContatoV}
+              placeholder={maeContato.placeholder}
             />
           </Grid>
         </Grid>

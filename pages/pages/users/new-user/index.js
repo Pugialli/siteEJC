@@ -30,11 +30,11 @@ import MDBox from "/components/MDBox";
 import MDButton from "/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
+import InscricaoLayout from "/pagesComponents/pages/users/new-user/components/InscricaoLayout";
 import Footer from "/examples/Footer";
 
 // NewUser page components
-import UserInfo from "/pagesComponents/pages/users/new-user/components/UserInfo";
+import InfoUsuario from "/pagesComponents/pages/users/new-user/components/InfoUsuario";
 import Address from "/pagesComponents/pages/users/new-user/components/Address";
 import Filiation from "/pagesComponents/pages/users/new-user/components/Filiation";
 import Invite from "/pagesComponents/pages/users/new-user/components/Invite";
@@ -45,6 +45,9 @@ import validations from "/pagesComponents/pages/users/new-user/schemas/validatio
 import form from "/pagesComponents/pages/users/new-user/schemas/form";
 import initialValues from "/pagesComponents/pages/users/new-user/schemas/initialValues";
 
+// Images
+import bgImage from "/assets/images/bg-sign-in-basic.jpeg";
+
 function getSteps() {
   return ["Dados Pessoais", "Endereço", "Filiação", "Indicação", "Outros"];
 }
@@ -52,7 +55,7 @@ function getSteps() {
 function getStepContent(stepIndex, formData) {
   switch (stepIndex) {
     case 0:
-      return <UserInfo formData={formData} />;
+      return <InfoUsuario formData={formData} />;
     case 1:
       return <Address formData={formData} />;
     case 2:
@@ -102,8 +105,8 @@ function NewUser() {
   };
 
   return (
-    <DashboardLayout>
-      <MDBox py={3} mb={20} height="65vh">
+    <InscricaoLayout image={bgImage}>
+      <MDBox py={5} mb={20} height="65vh">
         <Grid
           container
           justifyContent="center"
@@ -172,7 +175,7 @@ function NewUser() {
         </Grid>
       </MDBox>
       <Footer />
-    </DashboardLayout>
+    </InscricaoLayout>
   );
 }
 

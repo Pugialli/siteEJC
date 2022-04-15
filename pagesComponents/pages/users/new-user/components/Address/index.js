@@ -109,7 +109,7 @@ function Address({ formData }) {
             <Autocomplete
               options={["RJ", "SP", "Outros"]}
               renderInput={(params) => (
-                <MDInput {...params} variant="standard" label="Estado" />
+                <MDInput {...params} variant="standard" label="Estado"/>
               )}
             />
           </Grid>

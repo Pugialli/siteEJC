@@ -26,36 +26,59 @@ import MDTypography from "/components/MDTypography";
 // NewUser page components
 import FormField from "/pagesComponents/pages/users/new-user/components/FormField";
 
-function Profile({ formData }) {
+function Invite({ formData }) {
   const { formField, values } = formData;
-  const { publicEmail, bio } = formField;
-  const { publicEmail: publicEmailV, bio: bioV } = values;
+  const { indicadoNome, indicadoApelido, indicadoContato, indicadoEmail} = formField;
+  const {
+    indicadoNome: indicadoNomeV,
+    indicadoApelido: indicadoApelidoV,
+    indicadoContato: indicadoContatoV,
+    indicadoEmail: indicadoEmailV,
+  } = values;
 
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Profile
+        Quem te convidou?
       </MDTypography>
       <MDBox mt={1.625}>
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
+      <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
             <FormField
-              type={publicEmail.type}
-              label={publicEmail.label}
-              name={publicEmail.name}
-              value={publicEmailV}
-              placeholder={publicEmail.placeholder}
+              type={indicadoNome.type}
+              label={indicadoNome.label}
+              name={indicadoNome.name}
+              value={indicadoNomeV}
+              placeholder={indicadoNome.placeholder}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
             <FormField
-              type={bio.type}
-              label={bio.label}
-              name={bio.name}
-              value={bioV}
-              placeholder={bio.placeholder}
-              multiline
-              rows={5}
+              type={indicadoApelido.type}
+              label={indicadoApelido.label}
+              name={indicadoApelido.name}
+              value={indicadoApelidoV}
+              placeholder={indicadoApelido.placeholder}
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={indicadoContato.type}
+              label={indicadoContato.label}
+              name={indicadoContato.name}
+              value={indicadoContatoV}
+              placeholder={indicadoContato.placeholder}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormField
+              type={indicadoEmail.type}
+              label={indicadoEmail.label}
+              name={indicadoEmail.name}
+              value={indicadoEmailV}
+              placeholder={indicadoEmail.placeholder}
             />
           </Grid>
         </Grid>
@@ -65,8 +88,8 @@ function Profile({ formData }) {
 }
 
 // typechecking props for Profile
-Profile.propTypes = {
+Invite.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
 };
 
-export default Profile;
+export default Invite;

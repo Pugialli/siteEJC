@@ -22,7 +22,6 @@ const {
     dataNasc,
     celular,
     cep,
-    estado,
     cidade,
     bairro,
     endereco,
@@ -32,22 +31,21 @@ const {
 } = checkout;
 
 const validations = [
-  Yup.object().shape({
-    [nome.name]: Yup.string().required(nome.errorMsg),
-    [dataNasc.name]: Yup.string().required(dataNasc.errorMsg),
-    [celular.name]: Yup.string().required(celular.errorMsg).min(10, celular.invalidMsg),
-  }),
-  Yup.object().shape({
-    [cep.name]: Yup.string().required(cep.errorMsg).min(8, cep.invalidMsg),
-    [estado.name]: Yup.string().required(estado.errorMsg),
-    [cidade.name]: Yup.string().required(cidade.errorMsg),
-    [bairro.name]: Yup.string().required(bairro.errorMsg),
-    [endereco.name]: Yup.string().required(endereco.errorMsg),
-    [numero.name]: Yup.string().required(numero.errorMsg),
-  }),
-  Yup.object().shape({
-    [inscricaoPorMim.name]: Yup.string().required(inscricaoPorMim.errorMsg),
-  }),
+  // Yup.object().shape({
+  //   [nome.name]: Yup.string().required(nome.errorMsg),
+  //   [dataNasc.name]: Yup.string().required(dataNasc.errorMsg),
+  //   [celular.name]: Yup.string().required(celular.errorMsg).min(10, celular.invalidMsg),
+  // }),
+  // Yup.object().shape({
+  //   [cep.name]: Yup.string().required(cep.errorMsg).min(8, cep.invalidMsg),
+  //   [cidade.name]: Yup.string().required(cidade.errorMsg),
+  //   [bairro.name]: Yup.string().required(bairro.errorMsg),
+  //   [endereco.name]: Yup.string().required(endereco.errorMsg),
+  //   [numero.name]: Yup.string().required(numero.errorMsg),
+  // }),
+  // Yup.object().shape({
+  //   [inscricaoPorMim.name]: Yup.string().required(inscricaoPorMim.errorMsg),
+  // }),
 ];
 
 export default validations;

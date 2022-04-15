@@ -17,6 +17,12 @@ import checkout from "/pagesComponents/pages/users/new-user/schemas/form";
 
 const {
   formField: {
+    bairroEncontro,
+    inscricaoPorMim,
+    tamanhoCamisa,
+    restricoesAlimentares,
+    observacoes,
+
     nome,
     apelido,
     dataNasc,
@@ -34,8 +40,8 @@ const {
     numero,
     complemento,
 
-    moracom,
-    paisseparados,
+    moraCom,
+    paisSeparados,
     paiNome,
     paiContato,
     maeNome,
@@ -46,15 +52,17 @@ const {
     indicadoContato,
     indicadoEmail,
 
-    bairroEncontro,
-    inscricaoPorMim,
-    tamanhoCamisa,
-    restricoesAlimentares,
-    observacoes,
   },
 } = checkout;
 
 const initialValues = {
+  
+  [bairroEncontro.name]: "",
+  [inscricaoPorMim.name]: "",
+  [tamanhoCamisa.name]: "",
+  [restricoesAlimentares.name]: "",
+  [observacoes.name]: "",
+
   [nome.name]: "",
   [apelido.name]: "",
   [dataNasc.name]: "",
@@ -72,8 +80,8 @@ const initialValues = {
   [numero.name]: "",
   [complemento.name]: "",
 
-  [moracom.name]: "",
-  [paisseparados.name]: "",
+  [moraCom.name]: "",
+  [paisSeparados.name]: "",
   [paiNome.name]: "",
   [paiContato.name]: "",
   [maeNome.name]: "",
@@ -83,12 +91,6 @@ const initialValues = {
   [indicadoApelido.name]: "",
   [indicadoContato.name]: "",
   [indicadoEmail.name]: "",
-
-  [bairroEncontro.name]: "",
-  [inscricaoPorMim.name]: "",
-  [tamanhoCamisa.name]: "",
-  [restricoesAlimentares.name]: "",
-  [observacoes.name]: "",
 };
 
 export default initialValues;

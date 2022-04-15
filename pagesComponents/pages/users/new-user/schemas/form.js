@@ -43,12 +43,12 @@ const form = {
     telefone: {
       name: "telefone",
       label: "Telefone",
-      type: "text",
+      type: "tel",
     },
     celular: {
       name: "celular",
       label: "Celular",
-      type: "text",
+      type: "tel",
       errorMsg: "Celular é obrigatório.",
       invalidMsg: "Celular não é válido.",
     },
@@ -108,13 +108,13 @@ const form = {
     },
 
     //Filiação
-    moracom: {
-      name: "moracom",
+    moraCom: {
+      name: "moraCom",
       label: "Mora Com",
       type: "text",
     },
-    paisseparados: {
-      name: "paisseparados",
+    paisSeparados: {
+      name: "paisSeparados",
       label: "Pais Separados",
       type: "text",
     },
@@ -138,6 +138,7 @@ const form = {
       label: "Contato da Mãe",
       type: "text",
     },
+
     //Indicação
     indicadoNome: {
       name: "indicadoNome",
@@ -159,6 +160,7 @@ const form = {
       label: "Email",
       type: "email",
     },
+    
     //Outros
     bairroEncontro: {
       name: "bairroEncontro",
