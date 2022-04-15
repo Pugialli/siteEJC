@@ -32,7 +32,7 @@ function Footer({ light }) {
   const { size } = typography;
 
   return (
-    <MDBox position="absolute" width="100%" bottom={0} py={4}>
+    <MDBox position="absolute" width="100%" bottom={0} py={1}>
       <Container>
         <MDBox
           width="100%"
@@ -76,14 +76,13 @@ function Footer({ light }) {
               },
             })}
           >
-            <MDBox component="li" pl={2} lineHeight={1}>
+            <MDBox component="li" pl={1} lineHeight={1}>
               <Link href="https://www.creative-tim.com/license" target="_blank">
                 <MDTypography
                   variant="button"
-                  fontWeight="regular"
+                  fontWeight="light"
                   color={light ? "white" : "dark"}
-                >
-                  Licença
+                >Licença
                 </MDTypography>
               </Link>
             </MDBox>

@@ -30,8 +30,8 @@ import MDBox from "/components/MDBox";
 import MDButton from "/components/MDButton";
 
 // NextJS Material Dashboard 2 PRO examples
-import InscricaoLayout from "/pagesComponents/pages/users/new-user/components/InscricaoLayout";
-import Footer from "/examples/Footer";
+import PublicLayout from "/pagesComponents/pages/users/new-user/components/PublicLayout";
+import Footer from "/pagesComponents/authentication/components/Footer";
 
 // NewUser page components
 import InfoUsuario from "/pagesComponents/pages/users/new-user/components/InfoUsuario";
@@ -105,7 +105,7 @@ function NewUser() {
   };
 
   return (
-    <InscricaoLayout image={bgImage}>
+    <PublicLayout image={bgImage}>
       <MDBox py={5} mb={20} height="65vh">
         <Grid
           container
@@ -174,8 +174,9 @@ function NewUser() {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer />
-    </InscricaoLayout>
+      <Footer light />
+    </PublicLayout>
+    
   );
 }
 

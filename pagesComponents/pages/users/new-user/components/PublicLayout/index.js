@@ -17,7 +17,7 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // @mui material components
-import Grid from "@mui/material/Grid";
+// import Grid from "@mui/material/Grid";
 
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
@@ -27,16 +27,16 @@ import InscricaoNavbar from "/examples/Navbars/InscricaoNavbar";
 import PageLayout from "/examples/LayoutContainers/PageLayout";
 
 // NextJS Material Dashboard 2 PRO page layout routes
-import pageRoutes from "/routes/page.routes";
+import publicRoutes from "/routes/public.routes";
 
 // Authentication pages components
-import Footer from "/pagesComponents/authentication/components/Footer";
+// import Footer from "/pagesComponents/authentication/components/Footer";
 
-function InscricaoLayout({ image, children }) {
+function PublicLayout({ image, children }) {
   return (
     <PageLayout>
       <InscricaoNavbar
-        routes={pageRoutes}
+        routes={publicRoutes}
         transparent
         light
       />
@@ -60,27 +60,16 @@ function InscricaoLayout({ image, children }) {
         }}
       />
       <MDBox px={1} width="100%" height="100vh" mx="auto">
-        <Grid
-          container
-          spacing={1}
-          justifyContent="center"
-          alignItems="center"
-          height="100%"
-        >
-          <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
-            {children}
-          </Grid>
-        </Grid>
+          {children}
       </MDBox>
-      <Footer light />
     </PageLayout>
   );
 }
 
 // Typechecking props for the BasicLayout
-InscricaoLayout.propTypes = {
+PublicLayout.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default InscricaoLayout;
+export default PublicLayout;

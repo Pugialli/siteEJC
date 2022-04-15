@@ -54,12 +54,12 @@ const pageRoutes = [
         ],
       },
       {
-        name: "users",
+        name: "usuários",
         icon: <Icon>people</Icon>,
         collapse: [
           {
-            name: "new user",
-            route: "/pages/users/new-user",
+            name: "participe",
+            route: "/pages/users/participe",
           },
         ],
       },

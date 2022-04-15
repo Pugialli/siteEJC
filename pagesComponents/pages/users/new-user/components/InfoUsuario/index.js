@@ -22,6 +22,7 @@ import Grid from "@mui/material/Grid";
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
+import MDDatePicker from "/components/MDDatePicker";
 
 // NewUser page components
 import FormField from "/pagesComponents/pages/users/new-user/components/FormField";

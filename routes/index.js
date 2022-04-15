@@ -114,9 +114,9 @@ const routes = [
         key: "users",
         collapse: [
           {
-            name: "New User",
-            key: "new-user",
-            route: "/pages/users/new-user",
+            name: "Participe",
+            key: "participe",
+            route: "/pages/users/participe",
           },
         ],
       },
