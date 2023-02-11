@@ -35,14 +35,17 @@ function OtherInfo({ formData }) {
   const { bairroEncontro, tamanhoCamisa, restricoesAlimentares, observacoes } = formField;
   const {
     bairroEncontro: bairroEncontroV,
-    inscricaoPorMim: inscricaoPorMimV,
+    inscricaoPorMim,
     tamanhoCamisa: tamanhoCamisaV,
     restricoesAlimentares: restricoesAlimentaresV,
     observacoes: observacoesV,
   } = values;
 
-  const [inscricaoPorMim, setInscricaoPorMim] = useState(true);
-  const handleSetInscricaoPorMim = () => setInscricaoPorMim(!inscricaoPorMim);
+  const [inscricaoPorMimV, setInscricaoPorMim] = useState(true);
+  const handleSetInscricaoPorMim = () => {
+    setInscricaoPorMim(!inscricaoPorMimV);
+    values.inscricaoPorMim = inscricaoPorMimV;
+     }
 
   return (
     <MDBox>
@@ -91,7 +94,9 @@ function OtherInfo({ formData }) {
             <Autocomplete
               options={["P", "M", "G", "GG", "XGG"]}
               renderInput={(params) => (
-                <MDInput {...params} variant="standard" label="Camisa"/>
+                <MDInput {...params} variant="standard" label="Camisa"
+                value={tamanhoCamisaV}
+                />
               )}
             />
           </Grid>

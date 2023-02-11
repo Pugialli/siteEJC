@@ -40,7 +40,7 @@ function Footer({ light }) {
           flexDirection={{ xs: "column", lg: "row" }}
           justifyContent="space-between"
           alignItems="center"
-          px={1.5}
+          // px={1.5}
         >
           <MDBox
             display="flex"

@@ -16,9 +16,6 @@ Coded by www.creative-tim.com
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// @mui material components
-// import Grid from "@mui/material/Grid";
-
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
 
@@ -28,9 +25,6 @@ import PageLayout from "/examples/LayoutContainers/PageLayout";
 
 // NextJS Material Dashboard 2 PRO page layout routes
 import publicRoutes from "/routes/public.routes";
-
-// Authentication pages components
-// import Footer from "/pagesComponents/authentication/components/Footer";
 
 function PublicLayout({ image, children }) {
   return (
